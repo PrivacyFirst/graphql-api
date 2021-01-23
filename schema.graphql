@@ -1,0 +1,36 @@
+type User {
+    id: ID!
+    userName: String!
+    contactList: [User!]!
+}
+
+interface Message {
+    from: ID!
+    content: String!
+    sentTime: Float!
+}
+
+type TextMessage implements Message{
+    from: ID!
+    content: String!
+    sentTime: Float!
+}
+
+type Chat {
+    id: ID!
+    users: [User!]!
+    admin: User!
+    creationDate: Float!
+    messages: [Message!]!
+}
+
+type Query {
+    user(id: ID!): User
+    users(ids: [ID!]): [User!]!
+    chat(id: ID!): Chat
+    chats(id: [ID!]!): [Chat!]!
+}
+
+type Subscription {
+    messageSent(chatID: ID!): Message
+}
