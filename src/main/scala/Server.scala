@@ -18,7 +18,6 @@ import scala.util.control.NonFatal
 import scala.util.{Failure, Success}
 import GraphQLRequestUnmarshaller._
 import com.softwaremill.macwire.wire
-import resolvers.{CompanyResolver, StocksResolver, TickerResolver}
 import sangria.slowlog.SlowLog
 
 object Server extends App with CorsSupport {

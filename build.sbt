@@ -1,9 +1,3 @@
-name := "graphql-api"
-version := "0.1"
-
-scalaVersion := "2.12.12"
-scalacOptions ++= Seq("-deprecation", "-feature")
-
 resolvers += Resolver.bintrayRepo("freshwood", "maven")
 
 val akkaVersion = "2.6.10"
@@ -36,6 +30,3 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % scalaTestVersion % Test,
   "org.scalatest" %% "scalatest-flatspec" % "3.2.0" % "test"
 )
-
-Revolver.settings
-enablePlugins(JavaAppPackaging)
